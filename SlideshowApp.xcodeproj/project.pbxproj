@@ -12,6 +12,11 @@
 		48A0EF411C97D2A800A29286 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A0EF3F1C97D2A800A29286 /* Main.storyboard */; };
 		48A0EF431C97D2A800A29286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A0EF421C97D2A800A29286 /* Assets.xcassets */; };
 		48A0EF461C97D2A800A29286 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A0EF441C97D2A800A29286 /* LaunchScreen.storyboard */; };
+		48A0EF511C97DB6300A29286 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 48A0EF4D1C97DB6300A29286 /* image1.jpg */; };
+		48A0EF521C97DB6300A29286 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 48A0EF4E1C97DB6300A29286 /* image2.jpg */; };
+		48A0EF531C97DB6300A29286 /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 48A0EF4F1C97DB6300A29286 /* image3.jpg */; };
+		48A0EF541C97DB6300A29286 /* image4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 48A0EF501C97DB6300A29286 /* image4.jpg */; };
+		48A0EF561C98573600A29286 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A0EF551C98573600A29286 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		48A0EF421C97D2A800A29286 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48A0EF451C97D2A800A29286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48A0EF471C97D2A800A29286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48A0EF4D1C97DB6300A29286 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
+		48A0EF4E1C97DB6300A29286 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
+		48A0EF4F1C97DB6300A29286 /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.jpg; sourceTree = "<group>"; };
+		48A0EF501C97DB6300A29286 /* image4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image4.jpg; sourceTree = "<group>"; };
+		48A0EF551C98573600A29286 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +67,11 @@
 				48A0EF3B1C97D2A800A29286 /* AppDelegate.swift */,
 				48A0EF3D1C97D2A800A29286 /* ViewController.swift */,
 				48A0EF3F1C97D2A800A29286 /* Main.storyboard */,
+				48A0EF551C98573600A29286 /* SecondViewController.swift */,
+				48A0EF4D1C97DB6300A29286 /* image1.jpg */,
+				48A0EF4E1C97DB6300A29286 /* image2.jpg */,
+				48A0EF4F1C97DB6300A29286 /* image3.jpg */,
+				48A0EF501C97DB6300A29286 /* image4.jpg */,
 				48A0EF421C97D2A800A29286 /* Assets.xcassets */,
 				48A0EF441C97D2A800A29286 /* LaunchScreen.storyboard */,
 				48A0EF471C97D2A800A29286 /* Info.plist */,
@@ -123,6 +138,10 @@
 			files = (
 				48A0EF461C97D2A800A29286 /* LaunchScreen.storyboard in Resources */,
 				48A0EF431C97D2A800A29286 /* Assets.xcassets in Resources */,
+				48A0EF531C97DB6300A29286 /* image3.jpg in Resources */,
+				48A0EF541C97DB6300A29286 /* image4.jpg in Resources */,
+				48A0EF511C97DB6300A29286 /* image1.jpg in Resources */,
+				48A0EF521C97DB6300A29286 /* image2.jpg in Resources */,
 				48A0EF411C97D2A800A29286 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48A0EF561C98573600A29286 /* SecondViewController.swift in Sources */,
 				48A0EF3E1C97D2A800A29286 /* ViewController.swift in Sources */,
 				48A0EF3C1C97D2A800A29286 /* AppDelegate.swift in Sources */,
 			);
