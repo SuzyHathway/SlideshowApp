@@ -22,6 +22,11 @@ class ViewController: UIViewController ,UIGestureRecognizerDelegate {
     //次の画面への画像保存の変数
     var selectedImage:String!
     
+    //*******更新箇所
+    //タイマーのインスタンス
+    var timer: NSTimer!
+    var h: Int!
+    
     //画像の配列
     let images = [
         UIImage(named: "image1.jpg")!,
@@ -34,27 +39,22 @@ class ViewController: UIViewController ,UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //アニメーション用の配列
-        let animationSeq = [
-            UIImage(named: "image1.jpg")!,
-            UIImage(named: "image2.jpg")!,
-            UIImage(named: "image3.jpg")!,
-            UIImage(named: "image4.jpg")!
-        ]
-        
-        imageView.animationImages = animationSeq
-        imageView.animationDuration = 2
-        imageView.animationRepeatCount = 0
-        
+        //一枚目の写真
+        h = 1
         
         //タップした時の動作設定
         imageView.userInteractionEnabled = true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tappedSingle:"))
+
     }
     
     //スタートボタンを押すと自動再生する
     @IBAction func startButton(sender: AnyObject) {
-        self.imageView.startAnimating()
+        
+        //*******更新箇所
+        //タイマーの設定
+        timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("slideShow"), userInfo: nil, repeats: true)
+
         
         startButton.hidden = true
         stopButton.hidden = false
@@ -64,7 +64,9 @@ class ViewController: UIViewController ,UIGestureRecognizerDelegate {
     
     //自動再生を止める
     @IBAction func stopButton(sender: AnyObject) {
-        self.imageView.stopAnimating()
+        //タイマー終了
+        timer.invalidate()
+
         
         startButton.hidden = false
         stopButton.hidden = true
@@ -115,6 +117,14 @@ class ViewController: UIViewController ,UIGestureRecognizerDelegate {
         }
         
             performSegueWithIdentifier("next",sender: nil)
+        
+            //タイマー終了
+            timer.invalidate()
+        
+            startButton.hidden = false
+            stopButton.hidden = true
+            proceedButton.hidden = false
+            backButton.hidden = false
         }
     
     
@@ -124,6 +134,17 @@ class ViewController: UIViewController ,UIGestureRecognizerDelegate {
             let svc:SecondViewController = segue.destinationViewController as! SecondViewController
             svc.number = selectedImage
 
+        }
+    }
+    
+    //*******更新箇所
+    func slideShow() {
+        let src: String = "image" + String(h) + ".jpg"
+        imageView.image = UIImage(named: src)
+        h = h + 1
+        
+        if h == 5 {
+            h = 1
         }
     }
 }
