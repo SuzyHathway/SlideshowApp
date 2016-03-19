@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="width" constant="335" id="st0-BD-1ew"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="image1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ct9-oo-1Vj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ct9-oo-1Vj">
                                 <rect key="frame" x="42" y="248" width="291" height="171"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -76,6 +76,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Ct9-oo-1Vj" firstAttribute="centerY" secondItem="iKd-Qr-d7H" secondAttribute="centerY" id="0hX-Sf-18R"/>
                             <constraint firstItem="IW6-kg-KUg" firstAttribute="top" secondItem="iKd-Qr-d7H" secondAttribute="bottom" constant="79" id="0ya-96-2IA"/>
                             <constraint firstItem="pQx-HC-3mt" firstAttribute="baseline" secondItem="LpM-tB-RTP" secondAttribute="firstBaseline" id="11z-Lm-8xi"/>
                             <constraint firstItem="E1n-fs-jdN" firstAttribute="centerX" secondItem="Ct9-oo-1Vj" secondAttribute="centerX" id="1Kx-Va-0K5"/>
@@ -120,15 +121,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BQC-FW-d5U">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BQC-FW-d5U">
                                 <rect key="frame" x="0.0" y="194" width="375" height="279"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="279" id="GKB-dy-el8"/>
                                     <constraint firstAttribute="width" constant="375" id="y5C-eO-Wlh"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yu-gx-GPt">
-                                <rect key="frame" x="172" y="499" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yu-gx-GPt">
+                                <rect key="frame" x="172" y="499" width="30" height="49"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="↩︎"/>
                                 <connections>
@@ -138,6 +139,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="BQC-FW-d5U" firstAttribute="centerX" secondItem="1yu-gx-GPt" secondAttribute="centerX" id="BmT-bA-L7Q"/>
+                            <constraint firstItem="BQC-FW-d5U" firstAttribute="centerY" secondItem="LHy-lT-rVh" secondAttribute="centerY" id="a7n-xG-S7O"/>
                             <constraint firstItem="1yu-gx-GPt" firstAttribute="top" secondItem="BQC-FW-d5U" secondAttribute="bottom" constant="26" id="db7-Df-iXf"/>
                             <constraint firstItem="1yu-gx-GPt" firstAttribute="centerX" secondItem="LHy-lT-rVh" secondAttribute="centerX" id="kWV-VD-EEi"/>
                         </constraints>

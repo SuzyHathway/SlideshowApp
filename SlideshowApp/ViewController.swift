@@ -22,10 +22,13 @@ class ViewController: UIViewController ,UIGestureRecognizerDelegate {
     //次の画面への画像保存の変数
     var selectedImage:String!
     
-    //*******更新箇所
+    //*******更新箇所*******//
     //タイマーのインスタンス
     var timer: NSTimer!
-    var h: Int!
+    
+    //1枚目の写真
+    var h: Int! = 1
+
     
     //画像の配列
     let images = [
@@ -38,10 +41,8 @@ class ViewController: UIViewController ,UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //一枚目の写真
-        h = 1
-        
+
+
         //タップした時の動作設定
         imageView.userInteractionEnabled = true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tappedSingle:"))
@@ -51,7 +52,7 @@ class ViewController: UIViewController ,UIGestureRecognizerDelegate {
     //スタートボタンを押すと自動再生する
     @IBAction func startButton(sender: AnyObject) {
         
-        //*******更新箇所
+        //*******更新箇所*******//
         //タイマーの設定
         timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("slideShow"), userInfo: nil, repeats: true)
 
@@ -74,35 +75,35 @@ class ViewController: UIViewController ,UIGestureRecognizerDelegate {
         backButton.hidden = false
     }
     
+    
+    //*******更新箇所*******//
     //進むボタンを押すと一つ進む
     @IBAction func proceedButton(sender: AnyObject) {
         
-        if self.imageView.image == UIImage(named: "image1.jpg")! {
-            self.imageView.image = images[1]
-        }else if self.imageView.image == UIImage(named: "image2.jpg")!{
-            self.imageView.image = images[2]
-        }else if self.imageView.image == UIImage(named: "image3.jpg")!{
-            self.imageView.image = images[3]
-        }else{
-            self.imageView.image = images[0]
+        h = h + 1
+        if h == images.count + 1 {
+            h = 1
         }
+        let src: String = "image" + String(h) + ".jpg"
+        imageView.image = UIImage(named: src)
     }
+
     
+    //*******更新箇所*******//
     //戻るボタンを押すと一つ戻る
     @IBAction func backButton(sender: AnyObject) {
         
-        if self.imageView.image == UIImage(named: "image4.jpg")! {
-            self.imageView.image = images[2]
-        }else if self.imageView.image == UIImage(named: "image3.jpg")!{
-            self.imageView.image = images[1]
-        }else if self.imageView.image == UIImage(named: "image2.jpg")!{
-            self.imageView.image = images[0]
-        }else{
-            self.imageView.image = images[3]
+        h = h - 1
+        if h == 0 {
+            h = 4
         }
-        
+        let src: String = "image" + String(h) + ".jpg"
+        imageView.image = UIImage(named: src)
+
     }
     
+
+
     //画像をタップすると同じ画像が次の画面に移る
     func tappedSingle(sender: UITapGestureRecognizer!) {
 
@@ -137,15 +138,15 @@ class ViewController: UIViewController ,UIGestureRecognizerDelegate {
         }
     }
     
-    //*******更新箇所
+    //*******更新箇所*******//
     func slideShow() {
-        let src: String = "image" + String(h) + ".jpg"
-        imageView.image = UIImage(named: src)
-        h = h + 1
         
-        if h == 5 {
+        h = h + 1
+        if h == images.count + 1 {
             h = 1
         }
-    }
+        let src: String = "image" + String(h) + ".jpg"
+        imageView.image = UIImage(named: src)
+}
 }
 
