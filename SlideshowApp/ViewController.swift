@@ -107,26 +107,18 @@ class ViewController: UIViewController ,UIGestureRecognizerDelegate {
     //画像をタップすると同じ画像が次の画面に移る
     func tappedSingle(sender: UITapGestureRecognizer!) {
 
-        if self.imageView.image == UIImage(named: "image4.jpg")! {
-            selectedImage = "image4.jpg"
-        }else if self.imageView.image == UIImage(named: "image3.jpg")!{
-            selectedImage = "image3.jpg"
-        }else if self.imageView.image == UIImage(named: "image2.jpg")!{
-            selectedImage = "image2.jpg"
-        }else{
+        if h == 1 {
             selectedImage = "image1.jpg"
+        }else if h == 2 {
+            selectedImage = "image2.jpg"
+        }else if h == 3 {
+            selectedImage = "image3.jpg"
+        }else{
+            selectedImage = "image4.jpg"
         }
         
             performSegueWithIdentifier("next",sender: nil)
-        
-            //タイマー終了
-            timer.invalidate()
-        
-            startButton.hidden = false
-            stopButton.hidden = true
-            proceedButton.hidden = false
-            backButton.hidden = false
-        }
+    }
     
     
     //セグエの設定
